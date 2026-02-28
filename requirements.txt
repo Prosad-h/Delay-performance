@@ -1,18 +1,11 @@
-# ── Web Framework ──────────────────────────────
 flask==3.1.0
 flask-cors==5.0.1
 gunicorn==23.0.0
-
-# ── Data & ML ─────────────────────────────────
 pandas==2.2.3
 numpy==2.2.3
 scikit-learn==1.6.1
 joblib==1.4.2
-
-# ── Experiment tracking ───────────────────────
 mlflow==2.20.3
 dagshub==0.5.1
-
-# ── Utilities ─────────────────────────────────
 pyyaml==6.0.2
 python-dotenv==1.1.0

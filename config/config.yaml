@@ -1,16 +1,10 @@
-# ─────────────────────────────────────────────────────────
-# Centralised config for the Flight Delay Prediction service.
-# Edit paths & hyper-parameters here instead of touching code.
-# ─────────────────────────────────────────────────────────
-
 data:
-  raw_data_dir: "D:\\Project\\data"              # where archive.zip lives
+  raw_data_dir: "D:\\Project\\data"
   archive_name: "archive.zip"
-  extract_dir: "D:\\Project\\data\\extracted"     # unzipped CSV(s) land here
-  sample_size: 50000                            # limit for fast iteration
+  extract_dir: "D:\\Project\\data\\extracted"
+  sample_size: 50000
 
 features:
-  # Columns we actually feed into the model after cleaning
   target: "ArrDel15"
   numeric:
     - "Month"
@@ -26,13 +20,12 @@ features:
     - "Dest"
     - "DepTimeBlk"
     - "ArrTimeBlk"
-  drop_threshold: 0.60   # drop columns with > 60% nulls
+  drop_threshold: 0.60
 
 model:
   test_size: 0.20
   random_state: 42
   save_dir: "models"
-  # Hyperparameter grids kept intentionally small for fast iteration
   random_forest:
     n_estimators: [50]
     max_depth: [10]
